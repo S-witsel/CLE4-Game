@@ -3,6 +3,7 @@ import { Layout } from "../misc/layout";
 import { Resources } from "../resources";
 import { Cursor } from "../UI-elements/cursor";
 import { Tower } from "../towers/tower";
+import { RoadElement } from "../mapelements/roadelement";
 
 export class Level1 extends Scene{
 
@@ -19,5 +20,8 @@ export class Level1 extends Scene{
 
         this.cursor = new Cursor()
         this.add(this.cursor)
+
+        let element = new RoadElement(500,350,80,80)
+        this.add(element)
     }
 }

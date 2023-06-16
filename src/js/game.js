@@ -11,7 +11,7 @@ export class Game extends Engine {
     }
 
     startGame() {
-
+        this.showDebug(true)
         this.addScene('level1', new Level1())
 
         this.goToScene('level1')

@@ -1,8 +1,11 @@
-import { Actor, Vector, Input, Color } from "excalibur";
+import { Actor, Vector, Input, Color} from "excalibur";
 import { Resources } from "../resources";
 import { Tower } from "../towers/tower";
 
 export class Cursor extends Actor{
+
+    towerarray
+    selectedtower
 
     canplacetower
     placementcd
@@ -23,6 +26,7 @@ export class Cursor extends Actor{
             if(event.other instanceof Tower){
                 this.canplacetower = this.canplacetower + 1
                 console.log(this.canplacetower)
+                this.selectedtower = event.other
             }
         })
         this.on('collisionend' ,(event) => {
@@ -30,6 +34,7 @@ export class Cursor extends Actor{
                 this.canplacetower = this.canplacetower - 1
                 console.log(this.canplacetower)
                 this.placementcd = 0
+                this.selectedtower = 0
             }
         })
     }
@@ -67,6 +72,13 @@ export class Cursor extends Actor{
                 tower.pos = this.pos
                 engine.currentScene.add(tower)
             }
+        }
+
+        if(engine.input.keyboard.isHeld(Input.Keys.Num4)){
+            if(this.selectedtower instanceof Tower){
+                this.selectedtower.kill()
+            }
+            
         }
         
         if(this.canplacetower > 0){
