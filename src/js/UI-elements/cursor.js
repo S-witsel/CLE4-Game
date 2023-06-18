@@ -1,6 +1,7 @@
 import { Actor, Vector, Input, Color} from "excalibur";
 import { Resources } from "../resources";
 import { Tower } from "../towers/tower";
+import { RoadElement } from "../mapelements/roadelement";
 
 export class Cursor extends Actor{
 
@@ -8,7 +9,6 @@ export class Cursor extends Actor{
     selectedtower
 
     canplacetower
-    placementcd
     sprite
 
     constructor(){
@@ -23,17 +23,16 @@ export class Cursor extends Actor{
         this.pos = new Vector(500,350)
 
         this.on('collisionstart' ,(event) => {
-            if(event.other instanceof Tower){
+            if(event.other instanceof Tower || event.other instanceof RoadElement){
                 this.canplacetower = this.canplacetower + 1
                 console.log(this.canplacetower)
                 this.selectedtower = event.other
             }
         })
         this.on('collisionend' ,(event) => {
-            if((event.other instanceof Tower)){
+            if((event.other instanceof Tower || event.other instanceof RoadElement)){
                 this.canplacetower = this.canplacetower - 1
                 console.log(this.canplacetower)
-                this.placementcd = 0
                 this.selectedtower = 0
             }
         })
