@@ -14,6 +14,7 @@ export class RoadElement extends Actor{
     }
 
     onInitialize(){
+        
         this.pos = new Vector(this.xpos, this.ypos)
         this.z = 1
     }
