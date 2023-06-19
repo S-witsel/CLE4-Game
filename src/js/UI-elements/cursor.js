@@ -25,14 +25,12 @@ export class Cursor extends Actor{
         this.on('collisionstart' ,(event) => {
             if(event.other instanceof Tower || event.other instanceof RoadElement){
                 this.canplacetower = this.canplacetower + 1
-                console.log(this.canplacetower)
                 this.selectedtower = event.other
             }
         })
         this.on('collisionend' ,(event) => {
             if((event.other instanceof Tower || event.other instanceof RoadElement)){
                 this.canplacetower = this.canplacetower - 1
-                console.log(this.canplacetower)
                 this.selectedtower = 0
             }
         })

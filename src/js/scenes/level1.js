@@ -29,7 +29,7 @@ export class Level1 extends Scene{
         this.add(this.levelbackground)
         
         //developing assist
-        this.add(new DevMapAssist())
+        //this.add(new DevMapAssist())
 
         this.add(new RoadElement(370,100,740,80))
         this.add(new RoadElement(700,300,80,480))
@@ -49,7 +49,7 @@ export class Level1 extends Scene{
             let test = new EnemyCore()
             test.RouteArray = [[0,100],[700,100],[700,500],[0,500]]
             test.onSpawn()
-            test.speedfactor = 500
+            test.speedfactor = 1000
             this.add(test)
             this.spawncounter = 0
         }

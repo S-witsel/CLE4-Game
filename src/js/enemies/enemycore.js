@@ -16,12 +16,12 @@ export class EnemyCore extends Actor{
     speedfactor
 
     constructor(){
-        super({height: 50, width: 50})
+        super({radius: (Resources.Broccoli1.height / 2)})
     }
 
     onInitialize(){
         this.onSpawn()
-        this.graphics.use(Resources.Emptyspace.toSprite())
+        this.graphics.use(Resources.Broccoli1.toSprite())
     }
 
     onSpawn(){
@@ -30,6 +30,8 @@ export class EnemyCore extends Actor{
         this.pos = new Vector(this.startposx, this.startposy)
         this.RemainingRoute = this.RouteArray.length
         this.CurrentRoute = 0
+
+        this.scale = new Vector(3,3)
     }
 
     onPreUpdate(){
