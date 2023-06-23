@@ -14,6 +14,9 @@ export class EnemyCore extends Actor{
     yvel
 
     speedfactor
+    traversedpixels
+
+    health
 
     constructor(){
         super({radius: (Resources.Broccoli1.height / 2)})
@@ -22,11 +25,13 @@ export class EnemyCore extends Actor{
     onInitialize(){
         this.onSpawn()
         this.graphics.use(Resources.Broccoli1.toSprite())
+        this.health = 10
     }
 
     onSpawn(){
         this.startposx = this.RouteArray[0][0]
         this.startposy = this.RouteArray[0][1]
+        this.traversedpixels = 0
         this.pos = new Vector(this.startposx, this.startposy)
         this.RemainingRoute = this.RouteArray.length
         this.CurrentRoute = 0
@@ -34,13 +39,17 @@ export class EnemyCore extends Actor{
         this.scale = new Vector(3,3)
     }
 
-    onPreUpdate(){
+    onPreUpdate(engine, delta){
         //this.updateVel()
         this.GotoNext()
+        this.updateTargetPriority(engine, delta)
+        if(this.health <= 0){
+            this.kill()
+        }
     }
 
     GotoNext(){
-        if(this.pos.x === this.RouteArray[this.CurrentRoute][0] && this.pos.y === this.RouteArray[this.CurrentRoute][1]){
+        if((this.pos.x > (this.RouteArray[this.CurrentRoute][0] - 5)) && (this.pos.x < (this.RouteArray[this.CurrentRoute][0] + 5)) && (this.pos.y > (this.RouteArray[this.CurrentRoute][1] - 5)) && (this.pos.y < (this.RouteArray[this.CurrentRoute][1] + 5))){
             this.CurrentRoute = this.CurrentRoute + 1
 
             if(this.CurrentRoute === this.RemainingRoute){
@@ -50,6 +59,10 @@ export class EnemyCore extends Actor{
                 this.actions.moveTo(pos,this.speedfactor);
             }
         }
+    }
+
+    updateTargetPriority(engine,delta){
+        this.traversedpixels = this.traversedpixels + ((delta / 1000) * this.speedfactor)
     }
 
     // updateVel(){

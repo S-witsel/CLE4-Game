@@ -39,7 +39,7 @@ export class Level1 extends Scene{
         this.add(this.cursor)
 
         this.spawncounter = 0
-        this.spawndelay = 500
+        this.spawndelay = 1500
     }
 
     onPreUpdate(engine, delta){
@@ -49,7 +49,7 @@ export class Level1 extends Scene{
             let test = new EnemyCore()
             test.RouteArray = [[0,100],[700,100],[700,500],[0,500]]
             test.onSpawn()
-            test.speedfactor = 1000
+            test.speedfactor = 300
             this.add(test)
             this.spawncounter = 0
         }

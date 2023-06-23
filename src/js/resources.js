@@ -2,6 +2,7 @@ import { ImageSource, Sound, Resource, Loader } from 'excalibur'
 
 import emptyspace from '../images/placeholder/emptyspace.png'
 import towerplaceholder from '../images/placeholder/towerplaceholder.png'
+import testprojectile from '../images/placeholder/TestProjectileV2.png'
 
 import level1layout from '../images/placeholder/Level1placeholder.png'
 
@@ -14,6 +15,7 @@ const Resources = {
 
     Emptyspace : new ImageSource(emptyspace),
     Towerplaceholder : new ImageSource(towerplaceholder),
+    TestProjectile : new ImageSource(testprojectile),
 
     Level1layout : new ImageSource(level1layout),
 
