@@ -21,7 +21,17 @@ export class Tower extends Actor{
     }
 
     onInitialize(engine){
-        this.range = 300
+        this.onSpawn(engine)
+    }
+
+    onPreUpdate(engine, delta){
+        this.delta = delta
+        this.updateCurrentTarget()
+        this.shootAtTarget(engine)
+    }
+
+    onSpawn(engine){
+    	this.range = 300
         this.graphics.use(Resources.Towerplaceholder.toSprite())
 
         this.enemiesinrange = []
@@ -36,12 +46,10 @@ export class Tower extends Actor{
 
         this.firecooldown = 0
         this.firerate = 300
-    }
 
-    onPreUpdate(engine, delta){
-        this.delta = delta
-        this.updateCurrentTarget()
-        this.shootAtTarget(engine)
+        this.on('collisionstart', (event) => {
+            
+        })
     }
 
     updateCurrentTarget(){
@@ -74,7 +82,18 @@ export class Tower extends Actor{
                 let shootdirectionx = enemyx - this.pos.x
                 let shootdirectiony = enemyy - this.pos.y
 
-                engine.currentScene.add(new ProjectileCore(this.pos.x, this.pos.y, shootdirectionx, shootdirectiony, 0, 2000, 3, 10))
+                function calculateAngle(x1, y1, x2, y2) {
+                var deltaX = x2 - x1;
+                var deltaY = y2 - y1;
+                return Math.atan2(deltaY, deltaX);
+                }
+
+                var angleToActor2 = calculateAngle(this.pos.x, this.pos.y, enemyx, enemyy);
+                this.rotation = angleToActor2;
+
+                let projectile = new ProjectileCore(this.pos.x, this.pos.y, shootdirectionx, shootdirectiony, 0, 800, 3, 10)
+                projectile.rotation = angleToActor2
+                engine.currentScene.add(projectile)
             }
             this.firecooldown = 0
         }

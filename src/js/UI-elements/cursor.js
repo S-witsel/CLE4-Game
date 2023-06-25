@@ -2,6 +2,7 @@ import { Actor, Vector, Input, Color} from "excalibur";
 import { Resources } from "../resources";
 import { Tower } from "../towers/tower";
 import { RoadElement } from "../mapelements/roadelement";
+import { RoadElementRound } from "../mapelements/roadelementround";
 
 export class Cursor extends Actor{
 
@@ -23,13 +24,13 @@ export class Cursor extends Actor{
         this.pos = new Vector(500,350)
 
         this.on('collisionstart' ,(event) => {
-            if(event.other instanceof Tower || event.other instanceof RoadElement){
+            if(event.other instanceof Tower || event.other instanceof RoadElement || event.other instanceof RoadElementRound){
                 this.canplacetower = this.canplacetower + 1
                 this.selectedtower = event.other
             }
         })
         this.on('collisionend' ,(event) => {
-            if((event.other instanceof Tower || event.other instanceof RoadElement)){
+            if((event.other instanceof Tower || event.other instanceof RoadElement || event.other instanceof RoadElementRound)){
                 this.canplacetower = this.canplacetower - 1
                 this.selectedtower = 0
             }

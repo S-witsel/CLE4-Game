@@ -1,10 +1,13 @@
-import { Actor, Vector } from "excalibur";
+import { Actor, Color, Vector, Graphic } from "excalibur";
 import { EnemyCore } from "../enemies/enemycore";
 
 export class Towerrange extends Actor{
 
+    rangeindicator
+    range
     constructor(range){
         super({radius: range})
+        this.range = range
     }
     
     onInitialize(engine){

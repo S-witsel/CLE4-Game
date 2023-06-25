@@ -1,13 +1,13 @@
 import { Actor, Vector } from "excalibur";
 
-export class RoadElement extends Actor{
+export class RoadElementRound extends Actor{
 
     xpos
     ypos
 
-    constructor(xpos, ypos, xlength, ylength){
+    constructor(xpos, ypos, radius){
 
-        super({width: xlength, height: ylength})
+        super({radius: radius})
         this.xpos = xpos
         this.ypos = ypos
     }

@@ -10,6 +10,6 @@ export class Level1layout extends Actor{
     onInitialize(){
         this.anchor = new Vector(0,0)
         this.pos = new Vector(0,0)
-        this.graphics.use(Resources.Level1layout.toSprite())
+        this.graphics.use(Resources.Map1.toSprite())
     }
 }

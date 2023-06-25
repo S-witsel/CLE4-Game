@@ -7,12 +7,16 @@ import { RoadElement } from "../mapelements/roadelement";
 import { Level1layout } from "../mapelements/level1layout";
 import { DevMapAssist } from "../mapelements/devmapassist";
 import { EnemyCore } from "../enemies/enemycore";
+import { RoadElementRound } from "../mapelements/roadelementround";
 
 export class Level1 extends Scene{
 
     levelbackground
     layout
     cursor
+
+    map
+    route
 
     spawncounter
     spawndelay
@@ -29,11 +33,39 @@ export class Level1 extends Scene{
         this.add(this.levelbackground)
         
         //developing assist
-        //this.add(new DevMapAssist())
+        this.add(new DevMapAssist())
 
-        this.add(new RoadElement(370,100,740,80))
-        this.add(new RoadElement(700,300,80,480))
-        this.add(new RoadElement(370,500,740,80))
+        //roadblocks
+        this.add(new RoadElement(35,140,50,280))
+        this.add(new RoadElement(140,255,260,50))
+        this.add(new RoadElement(245,215,50,130))
+        this.add(new RoadElement(535,175,630,50))
+        this.add(new RoadElement(825,240,50,180))
+        this.add(new RoadElement(650,305,400,50))
+
+        this.add(new RoadElementRound(485,455,120))
+
+        this.add(new RoadElement(485,650,50,150))
+
+        this.add(new RoadElement(690,455,185,50))
+        this.add(new RoadElement(755,535,50,210))
+        this.add(new RoadElement(800,615,140,50))
+        this.add(new RoadElement(845,645,50,110))
+
+        this.add(new RoadElement(280,455,185,50))
+        this.add(new RoadElement(215,540,50,220))
+        this.add(new RoadElement(170,625,140,50))
+        this.add(new RoadElement(125,650,50,100))
+
+        this.route = [
+            [35,0],
+            [35,255],
+            [245,255],
+            [245,175],
+            [825,175],
+            [825,305],
+            [475,305]
+        ]
 
         this.cursor = new Cursor()
         this.add(this.cursor)
@@ -47,9 +79,9 @@ export class Level1 extends Scene{
 
         if(this.spawncounter > this.spawndelay){
             let test = new EnemyCore()
-            test.RouteArray = [[0,100],[700,100],[700,500],[0,500]]
+            test.RouteArray = this.route
             test.onSpawn()
-            test.speedfactor = 300
+            test.speedfactor = 100
             this.add(test)
             this.spawncounter = 0
         }
