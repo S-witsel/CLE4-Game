@@ -18,6 +18,10 @@ export class Level1 extends Scene{
     map
     route
 
+    route1
+    route2
+    route3
+
     spawncounter
     spawndelay
 
@@ -33,7 +37,7 @@ export class Level1 extends Scene{
         this.add(this.levelbackground)
         
         //developing assist
-        this.add(new DevMapAssist())
+        //this.add(new DevMapAssist())
 
         //roadblocks
         this.add(new RoadElement(35,140,50,280))
@@ -64,14 +68,36 @@ export class Level1 extends Scene{
             [245,175],
             [825,175],
             [825,305],
-            [475,305]
+            [475,305],
+            [475,400]
+        ]
+
+        this.route1 = [
+            [360,455],
+            [215,455],
+            [215,625],
+            [125,625],
+            [125,700]
+        ]
+
+        this.route2 = [
+            [485,580],
+            [485,700]
+        ]
+        
+        this.route3 = [
+            [610,455],
+            [755,455],
+            [755,615],
+            [845,615],
+            [845,700]
         ]
 
         this.cursor = new Cursor()
         this.add(this.cursor)
 
         this.spawncounter = 0
-        this.spawndelay = 1500
+        this.spawndelay = 1000
     }
 
     onPreUpdate(engine, delta){
@@ -79,7 +105,20 @@ export class Level1 extends Scene{
 
         if(this.spawncounter > this.spawndelay){
             let test = new EnemyCore()
-            test.RouteArray = this.route
+            test.type = 1
+
+            let randomnummer = Math.random() * 3
+            let chosenroute
+            if(randomnummer < 1){
+               chosenroute = [...this.route,...this.route1] 
+            }
+            if(randomnummer >= 1 && randomnummer <= 2){
+                chosenroute = [...this.route,...this.route2]
+            }
+            if(randomnummer > 2){
+                chosenroute = [...this.route,...this.route3] 
+             }
+            test.RouteArray = chosenroute
             test.onSpawn()
             test.speedfactor = 100
             this.add(test)

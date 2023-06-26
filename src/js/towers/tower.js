@@ -91,7 +91,7 @@ export class Tower extends Actor{
                 var angleToActor2 = calculateAngle(this.pos.x, this.pos.y, enemyx, enemyy);
                 this.rotation = angleToActor2;
 
-                let projectile = new ProjectileCore(this.pos.x, this.pos.y, shootdirectionx, shootdirectiony, 0, 800, 3, 10)
+                let projectile = new ProjectileCore(this.pos.x, this.pos.y, shootdirectionx, shootdirectiony, 0, 800, 30, 10)
                 projectile.rotation = angleToActor2
                 engine.currentScene.add(projectile)
             }
