@@ -107,10 +107,50 @@ export class EnemyCore extends Actor{
                     }
                 })
                 break;
-            case 2:break;
-            case 3:break;
-            case 4:break;
-            case 5:break;
+            case 2:
+                this.spritesheet = SpriteSheet.fromImageSource({
+                    image: Resources.Orchid,
+                    grid: {
+                        rows: 1,
+                        columns: 2,
+                        spriteWidth: 17,
+                        spriteHeight: 16
+                    }
+                })
+                break;
+            case 3:
+                this.spritesheet = SpriteSheet.fromImageSource({
+                    image: Resources.Peach,
+                    grid: {
+                        rows: 1,
+                        columns: 2,
+                        spriteWidth: 16,
+                        spriteHeight: 18
+                    }
+                })
+                break;
+            case 4:
+                this.spritesheet = SpriteSheet.fromImageSource({
+                    image: Resources.Eggplant,
+                    grid: {
+                        rows: 1,
+                        columns: 2,
+                        spriteWidth: 15,
+                        spriteHeight: 18
+                    }
+                })
+                break;
+            case 5:
+                this.spritesheet = SpriteSheet.fromImageSource({
+                    image: Resources.Broccoli,
+                    grid: {
+                        rows: 1,
+                        columns: 2,
+                        spriteWidth: 15,
+                        spriteHeight: 17
+                    }
+                })
+                break;
         }
     }
 
