@@ -26,7 +26,7 @@ export class Tower extends Actor{
 
     onInitialize(engine){
         this.onSpawn(engine)
-        this.type = 1
+        //this.type = 4
         this.setType(this.type)
     }
 
@@ -107,12 +107,96 @@ export class Tower extends Actor{
         switch(type){
             case 1:
                 this.spritesheet = SpriteSheet.fromImageSource({
-                    image: Resources.Farmersprite,
+                    image: Resources.Artist,
                     grid: {
                         rows: 1,
                         columns: 2,
-                        spriteWidth: (Resources.Farmersprite.width / 2),
-                        spriteHeight: Resources.Farmersprite.height
+                        spriteWidth: (Resources.Artist.width / 2),
+                        spriteHeight: Resources.Artist.height
+                    }
+                });
+
+                this.graphics.use(Animation.fromSpriteSheet(this.spritesheet, range(0,0), 1, AnimationStrategy.Freeze))
+                this.scale = new Vector(3,3)
+                break;
+            case 2:
+                this.spritesheet = SpriteSheet.fromImageSource({
+                    image: Resources.Bokito,
+                    grid: {
+                        rows: 1,
+                        columns: 2,
+                        spriteWidth: (Resources.Bokito.width / 2),
+                        spriteHeight: Resources.Bokito.height
+                    }
+                });
+
+                this.graphics.use(Animation.fromSpriteSheet(this.spritesheet, range(0,0), 1, AnimationStrategy.Freeze))
+                this.scale = new Vector(3,3)
+                break;
+            case 3:
+                this.spritesheet = SpriteSheet.fromImageSource({
+                    image: Resources.Farmer,
+                    grid: {
+                        rows: 1,
+                        columns: 2,
+                        spriteWidth: (Resources.Farmer.width / 2),
+                        spriteHeight: Resources.Farmer.height
+                    }
+                });
+
+                this.graphics.use(Animation.fromSpriteSheet(this.spritesheet, range(0,0), 1, AnimationStrategy.Freeze))
+                this.scale = new Vector(3,3)
+                break;
+            case 4:
+                this.spritesheet = SpriteSheet.fromImageSource({
+                    image: Resources.Hacker,
+                    grid: {
+                        rows: 1,
+                        columns: 2,
+                        spriteWidth: (Resources.Hacker.width / 2),
+                        spriteHeight: Resources.Hacker.height
+                    }
+                });
+
+                this.graphics.use(Animation.fromSpriteSheet(this.spritesheet, range(0,0), 1, AnimationStrategy.Freeze))
+                this.scale = new Vector(3,3)
+                break;
+            case 5:
+                this.spritesheet = SpriteSheet.fromImageSource({
+                    image: Resources.Hooligans,
+                    grid: {
+                        rows: 1,
+                        columns: 2,
+                        spriteWidth: (Resources.Hooligans.width / 2),
+                        spriteHeight: Resources.Hooligans.height
+                    }
+                });
+
+                this.graphics.use(Animation.fromSpriteSheet(this.spritesheet, range(0,0), 1, AnimationStrategy.Freeze))
+                this.scale = new Vector(3,3)
+                break;
+            case 6:
+                this.spritesheet = SpriteSheet.fromImageSource({
+                    image: Resources.Job,
+                    grid: {
+                        rows: 1,
+                        columns: 2,
+                        spriteWidth: (Resources.Job.width / 2),
+                        spriteHeight: Resources.Job.height
+                    }
+                });
+
+                this.graphics.use(Animation.fromSpriteSheet(this.spritesheet, range(0,0), 1, AnimationStrategy.Freeze))
+                this.scale = new Vector(3,3)
+                break;
+            case 7:
+                this.spritesheet = SpriteSheet.fromImageSource({
+                    image: Resources.Weed,
+                    grid: {
+                        rows: 1,
+                        columns: 2,
+                        spriteWidth: (Resources.Weed.width / 2),
+                        spriteHeight: Resources.Weed.height
                     }
                 });
 

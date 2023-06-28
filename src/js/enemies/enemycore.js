@@ -24,11 +24,11 @@ export class EnemyCore extends Actor{
     animationtimer
 
     constructor(){
-        super({radius: (Resources.Broccoli1.height / 2)})
+        super({radius: (15 / 2)})
     }
 
     onInitialize(){
-        
+        this.type = 1
         this.onSpawn()
         this.setType(this.type)
         //this.graphics.use(Resources.Broccoli1.toSprite())
@@ -98,7 +98,7 @@ export class EnemyCore extends Actor{
         switch(type){
             case 1:
                 this.spritesheet = SpriteSheet.fromImageSource({
-                    image: Resources.TomatoSpriteSheet,
+                    image: Resources.Tomato,
                     grid: {
                         rows: 1,
                         columns: 2,

@@ -7,6 +7,12 @@ import level1layout from '../images/placeholder/Level1placeholder.png'
 import templatelayout from '../images/templatelayout.png'
 import levelgridassist from '../images/levelGridAssist.png'
 
+import broccoli from '../images/enemies/broccoli.png'
+import eggplant from '../images/enemies/eggplant.png'
+import orchid from '../images/enemies/orchid.png'
+import peach from '../images/enemies/peach.png'
+import tomato from '../images/enemies/tomato.png'
+
 import cursor from '../images/ui/cursor.png'
 import artistUI from '../images/ui/artistUI.png'
 import bokitoUI from '../images/ui/bokitoUI.png'
@@ -15,6 +21,27 @@ import hackerUI from '../images/ui/hackerUI.png'
 import hooligansUI from '../images/ui/hooligansUI.png'
 import jobUI from '../images/ui/jobUI.png'
 import mrweedUI from '../images/ui/mrweedUI.png'
+
+import artistbullet from '../images/projectiles/artistBullet.png'
+import bokitobullet from '../images/projectiles/bokitoBullet.png'
+import farmerbullet from '../images/projectiles/farmerBullet.png'
+import hackerbullet from '../images/projectiles/hackerBullet.png'
+import hooligansbullet from '../images/projectiles/hooligansBullet.png'
+import jobbullet from '../images/projectiles/jobBullet.png'
+import weedbullet from '../images/projectiles/weedBullet.png'
+
+import artist from '../images/towers/artist.png'
+import artistb from '../images/towers/artistB.png'
+import bokito from '../images/towers/bokito.png'
+import farmer from '../images/towers/farmer.png'
+import farmerb from '../images/towers/farmerB.png'
+import hacker from '../images/towers/hacker.png'
+import hackerb from '../images/towers/hackerB.png'
+import hooligans from '../images/towers/hooligans.png'
+import hooligansb from '../images/towers/hooligansB.png'
+import job from '../images/towers/job.png'
+import weed from '../images/towers/weed.png'
+import weedb from '../images/towers/weedB.png'
 
 import map1 from '../images/maps/map1.png'
 import map2 from '../images/maps/map2.png'
@@ -30,15 +57,11 @@ const Resources = {
     TemplateLayout : new ImageSource(templatelayout),
     LevelGridAssist : new ImageSource(levelgridassist),
 
-    Broccoli1 : new ImageSource(broccoli1),
-    Broccoli2 : new ImageSource(broccoli2),
-    Broccoli3 : new ImageSource(broccoli3),
+    Broccoli : new ImageSource(broccoli),
     Eggplant : new ImageSource(eggplant),
     Orchid : new ImageSource(orchid),
     Peach : new ImageSource(peach),
-    Tomato1 : new ImageSource(tomato1),
-    Tomato2 : new ImageSource(tomato2),
-    TomatoSpriteSheet : new ImageSource(tomatospritesheet),
+    Tomato : new ImageSource(tomato),
     
     Cursor: new ImageSource(cursor),
     ArtistUI: new ImageSource(artistUI),
@@ -49,9 +72,26 @@ const Resources = {
     JobUI: new ImageSource(jobUI),
     MrweedUI: new ImageSource(mrweedUI),
 
-    Farmersprite: new ImageSource(farmerSprite),
+    ArtistBullet: new ImageSource(artistbullet),
+    BokitoBullet: new ImageSource(bokitobullet),
+    FarmerBullet: new ImageSource(farmerbullet),
+    HackerBullet: new ImageSource(hackerbullet),
+    HooligansBullet: new ImageSource(hooligansbullet),
+    JobBullet: new ImageSource(jobbullet),
+    WeedBullet: new ImageSource(weedbullet),
 
-    FarmerBullet: new ImageSource(farmerBullet),
+    Artist: new ImageSource(artist),
+    ArtistB: new ImageSource(artistb),
+    Bokito: new ImageSource(bokito),
+    Farmer: new ImageSource(farmer),
+    FarmerB: new ImageSource(farmerb),
+    Hacker: new ImageSource(hacker),
+    HackerB: new ImageSource(hackerb),
+    Hooligans: new ImageSource(hooligans),
+    HoolignasB: new ImageSource(hooligansb),
+    Job: new ImageSource(job),
+    Weed: new ImageSource(weed),
+    WeedB: new ImageSource(weedb),
 
     Map1: new ImageSource(map1),
     Map2: new ImageSource(map2),

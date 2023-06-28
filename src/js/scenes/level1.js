@@ -8,6 +8,7 @@ import { Level1layout } from "../mapelements/level1layout";
 import { DevMapAssist } from "../mapelements/devmapassist";
 import { EnemyCore } from "../enemies/enemycore";
 import { RoadElementRound } from "../mapelements/roadelementround";
+import { Towerinfo } from "../UI-elements/towerInfo";
 
 export class Level1 extends Scene{
 
@@ -98,6 +99,8 @@ export class Level1 extends Scene{
 
         this.spawncounter = 0
         this.spawndelay = 1000
+
+        this.add(new Towerinfo())
     }
 
     onPreUpdate(engine, delta){

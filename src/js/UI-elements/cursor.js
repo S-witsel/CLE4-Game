@@ -9,6 +9,9 @@ export class Cursor extends Actor{
     towerarray
     selectedtower
 
+    towerchoice
+    towerchoicebool
+
     canplacetower
     sprite
 
@@ -17,7 +20,7 @@ export class Cursor extends Actor{
     }
 
     onInitialize(){
-        
+        this.towerchoice = 1
         this.canplacetower = 0
         this.sprite = Resources.Cursor.toSprite()
         this.graphics.use(this.sprite)
@@ -68,6 +71,7 @@ export class Cursor extends Actor{
             if(this.canplacetower < 1){
                 let tower = new Tower()
                 tower.pos = this.pos
+                tower.type = this.towerchoice
                 engine.currentScene.add(tower)
             }
         }
@@ -77,6 +81,25 @@ export class Cursor extends Actor{
                 this.selectedtower.kill()
             }
             
+        }
+
+        if(engine.input.keyboard.isHeld(Input.Keys.Num8) && this.towerchoicebool){
+            this.towerchoice = this.towerchoice + 1
+            if(this.towerchoice > 7){
+                this.towerchoice = 1
+            }
+            this.towerchoicebool = false
+        } else {
+            this.towerchoicebool = true
+        }
+        if(engine.input.keyboard.isHeld(Input.Keys.Num9) && this.towerchoicebool){
+            this.towerchoice = this.towerchoice - 1
+            if(this.towerchoice < 1){
+                this.towerchoice = 7
+            }
+            this.towerchoicebool = false
+        } else {
+            this.towerchoicebool = true
         }
         
         if(this.canplacetower > 0){
