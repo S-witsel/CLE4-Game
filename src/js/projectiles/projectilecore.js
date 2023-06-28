@@ -46,6 +46,7 @@ export class ProjectileCore extends Actor{
             this.kill()
         })
 
-        this.graphics.use(Resources.TestProjectile.toSprite())
+        this.graphics.use(Resources.FarmerBullet.toSprite())
+        this.scale = new Vector(3,3)
     }
 }

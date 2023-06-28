@@ -7,16 +7,7 @@ import level1layout from '../images/placeholder/Level1placeholder.png'
 import templatelayout from '../images/templatelayout.png'
 import levelgridassist from '../images/levelGridAssist.png'
 
-import broccoli1 from '../images/enemies/broccoli1.png'
-import broccoli2 from '../images/enemies/broccoli2.png'
-import broccoli3 from '../images/enemies/broccoli3.png'
-import eggplant from '../images/enemies/eggplant.png'
-import orchid from '../images/enemies/orchid.png'
-import peach from '../images/enemies/peach.png'
-import tomato1 from '../images/enemies/tomato1.png'
-import tomato2 from '../images/enemies/tomato2.png'
-import tomatospritesheet from '../images/enemies/TomatoSpriteSheet.png'
-
+import cursor from '../images/ui/cursor.png'
 import artistUI from '../images/ui/artistUI.png'
 import bokitoUI from '../images/ui/bokitoUI.png'
 import farmerUI from '../images/ui/farmerUI.png'
@@ -24,10 +15,6 @@ import hackerUI from '../images/ui/hackerUI.png'
 import hooligansUI from '../images/ui/hooligansUI.png'
 import jobUI from '../images/ui/jobUI.png'
 import mrweedUI from '../images/ui/mrweedUI.png'
-
-import farmerSprite from '../images/towers/farmerSprite.png'
-
-import farmerBullet from '../images/projectiles/farmerBullet.png'
 
 import map1 from '../images/maps/map1.png'
 import map2 from '../images/maps/map2.png'
@@ -52,7 +39,8 @@ const Resources = {
     Tomato1 : new ImageSource(tomato1),
     Tomato2 : new ImageSource(tomato2),
     TomatoSpriteSheet : new ImageSource(tomatospritesheet),
-
+    
+    Cursor: new ImageSource(cursor),
     ArtistUI: new ImageSource(artistUI),
     BokitoUI: new ImageSource(bokitoUI),
     FarmerUI: new ImageSource(farmerUI),

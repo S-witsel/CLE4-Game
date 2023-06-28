@@ -19,7 +19,7 @@ export class Cursor extends Actor{
     onInitialize(){
         
         this.canplacetower = 0
-        this.sprite = Resources.Emptyspace.toSprite()
+        this.sprite = Resources.Cursor.toSprite()
         this.graphics.use(this.sprite)
         this.pos = new Vector(500,350)
 
